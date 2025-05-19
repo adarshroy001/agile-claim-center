@@ -23,7 +23,7 @@ const ClaimsFilter = ({ onFilterChange }: ClaimsFilterProps) => {
   const [policyNumber, setPolicyNumber] = useState("");
   const [customerName, setCustomerName] = useState("");
   const [employee, setEmployee] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("all"); // Changed default value to "all"
   const [dateFrom, setDateFrom] = useState<Date | undefined>(undefined);
   const [dateTo, setDateTo] = useState<Date | undefined>(undefined);
 
@@ -32,7 +32,7 @@ const ClaimsFilter = ({ onFilterChange }: ClaimsFilterProps) => {
       policyNumber,
       customerName,
       employee,
-      status,
+      status: status === "all" ? "" : status, // Convert "all" to empty string for filtering
       dateFrom,
       dateTo
     });
@@ -42,7 +42,7 @@ const ClaimsFilter = ({ onFilterChange }: ClaimsFilterProps) => {
     setPolicyNumber("");
     setCustomerName("");
     setEmployee("");
-    setStatus("");
+    setStatus("all"); // Reset to "all" instead of empty string
     setDateFrom(undefined);
     setDateTo(undefined);
     onFilterChange({});
@@ -85,7 +85,7 @@ const ClaimsFilter = ({ onFilterChange }: ClaimsFilterProps) => {
               <SelectValue placeholder="Select status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               <SelectItem value="pending">Pending</SelectItem>
               <SelectItem value="approved">Approved</SelectItem>
               <SelectItem value="rejected">Rejected</SelectItem>
