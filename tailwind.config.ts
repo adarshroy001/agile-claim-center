@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				display: ['IBM Plex Sans', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -26,7 +31,16 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					100: '#EBF5FF',
+					200: '#B8DBFD',
+					300: '#85C1FA',
+					400: '#51A7F7',
+					500: '#1E8DF4',
+					600: '#1A7DE2',
+					700: '#1561B0',
+					800: '#10447E',
+					900: '#0A274C'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -51,6 +65,12 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				status: {
+					pending: '#F59E0B',
+					approved: '#10B981',
+					rejected: '#EF4444',
+					inReview: '#6366F1'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
