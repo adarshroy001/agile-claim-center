@@ -5,7 +5,6 @@ import { formatBytes } from "@/lib/format-utils";
 import { 
   FileText, 
   FileImage, 
-  FilePdf, 
   Download, 
   Trash2, 
   File, 
