@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ClaimDocument } from "@/types/claim";
@@ -29,7 +28,7 @@ const ClaimDocuments = ({
     if (fileType.includes("image")) {
       return <FileImage className="h-8 w-8 text-blue-500" />;
     } else if (fileType.includes("pdf")) {
-      return <FilePdf className="h-8 w-8 text-red-500" />;
+      return <FileText className="h-8 w-8 text-red-500" />;
     } else if (fileType.includes("text") || fileType.includes("doc")) {
       return <FileText className="h-8 w-8 text-yellow-500" />;
     } else {

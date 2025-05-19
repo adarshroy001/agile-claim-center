@@ -1,7 +1,7 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Download, FileText, FileImage, FilePdf, File } from "lucide-react";
+import { Download, FileText, FileImage, File } from "lucide-react";
 import { ClaimDocument } from "@/types/claim";
 import { formatBytes } from "@/lib/format-utils";
 import { formatDate } from "@/lib/date-utils";
@@ -20,7 +20,7 @@ const DocumentPreviewModal = ({ isOpen, onClose, document }: DocumentPreviewModa
     if (fileType.includes("image")) {
       return <FileImage className="h-12 w-12 text-blue-500" />;
     } else if (fileType.includes("pdf")) {
-      return <FilePdf className="h-12 w-12 text-red-500" />;
+      return <FileText className="h-12 w-12 text-red-500" />;
     } else if (fileType.includes("text") || fileType.includes("doc")) {
       return <FileText className="h-12 w-12 text-yellow-500" />;
     } else {
